@@ -59,11 +59,11 @@ abstract class MyBaseClassTest : AppCompatActivity() {
 
         alertBox?.customAlertBoxButtonListener= object : CustomAlertBoxButtonListener {
             override fun onCentreButtonClick() {
-
+                alertBox?.hideDialog()
             }
 
             override fun onLeftButtonClick() {
-               alertBox?.hideDialog()
+              
             }
 
             override fun onRightButtonClick() {
