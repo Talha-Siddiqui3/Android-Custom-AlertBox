@@ -1,4 +1,3 @@
-
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -8,7 +7,7 @@ import com.rove.android_custom_alert.CustomAlertBox
 import com.rove.android_custom_alertbox.CustomAlertBoxButtonListener
 
 
-abstract class MyBaseClass : AppCompatActivity() {
+abstract class MyBaseClassTest : AppCompatActivity() {
     private var rootLatout: ConstraintLayout? = null
     private var alertBox: CustomAlertBox? = null
     private lateinit var context: Activity
@@ -31,7 +30,7 @@ abstract class MyBaseClass : AppCompatActivity() {
         val typeface = ResourcesCompat.getFont(context, R.font.ubuntu)
         val typefaceBold = ResourcesCompat.getFont(context, R.font.ubuntu_medium)
         alertBox?.setImage(
-            ContextCompat.getDrawable(context, R.drawable.final_logo),     //Change this to image you want to insert
+            ContextCompat.getDrawable(context, R.drawable.final_logo),
             height = resources.getDimension(R.dimen._55sdp),
             useSdp = true,
             scaleImageX = 1.6f,
@@ -58,20 +57,20 @@ abstract class MyBaseClass : AppCompatActivity() {
         alertBox?.setDialogMessage("An unknown error just occurred. Please try again in a bit. :(")
         alertBox?.showDialog()
 
-        alertBox?.customAlertBoxButtonListener = object : CustomAlertBoxButtonListener {
-            override fun cancelButtonLeftClick() {
+        alertBox?.customAlertBoxButtonListener= object : CustomAlertBoxButtonListener {
+            override fun onCentreButtonClick() {
 
             }
 
-            override fun okButtonRightClick() {
+            override fun onLeftButtonClick() {
+               alertBox?.hideDialog()
+            }
+
+            override fun onRightButtonClick() {
 
             }
 
-            override fun okButtonCentreClick() {
-                alertBox?.hideDialog()
-            }
         }
     }
-
 
 }
