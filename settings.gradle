@@ -1,0 +1,3 @@
+rootProject.name='Kotlin Test'
+include ':app'
+include ':android-custom-alertbox'
