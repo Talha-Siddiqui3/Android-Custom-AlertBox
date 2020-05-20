@@ -9,7 +9,7 @@ import com.rove.android_custom_alertbox.CustomAlertBoxButtonListener
 
 abstract class MyBaseClassTest : AppCompatActivity() {
     private var rootLatout: ConstraintLayout? = null
-    private var alertBox: CustomAlertBox? = null
+    var alertBox: CustomAlertBox? = null
     private lateinit var context: Activity
 
 
@@ -57,20 +57,26 @@ abstract class MyBaseClassTest : AppCompatActivity() {
         alertBox?.setDialogMessage("An unknown error just occurred. Please try again in a bit. :(")
         alertBox?.showDialog()
 
-        alertBox?.customAlertBoxButtonListener= object : CustomAlertBoxButtonListener {
+        alertBox?.customAlertBoxButtonListener = object : CustomAlertBoxButtonListener {
             override fun onCentreButtonClick() {
                 alertBox?.hideDialog()
             }
 
             override fun onLeftButtonClick() {
-              
+
             }
 
             override fun onRightButtonClick() {
 
             }
-
         }
+    }
+
+    fun showCustomConfirmation(message: String, listener: CustomAlertBoxButtonListener) {
+        alertBox?.setDialogType(false)
+        alertBox?.setDialogMessage(message)
+        alertBox?.showDialog()
+        alertBox?.customAlertBoxButtonListener = listener
     }
 
 }
