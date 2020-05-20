@@ -1,6 +1,4 @@
-*Created by Talha Siddiqui on 30/04/2020.
- Copyright (c) 2020 Rove. All rights reserved.
-*/
+
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
