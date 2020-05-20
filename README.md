@@ -1,2 +1,2 @@
 # Android-Custom-AlertBox
-Custom AlertBox View for Android with a variety of customizations. 
+Custom AlertBox View for Android with a background overlay and a variety of customizations. 
