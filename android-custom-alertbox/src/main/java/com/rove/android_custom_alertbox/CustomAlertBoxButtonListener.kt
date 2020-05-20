@@ -4,7 +4,7 @@ package com.rove.android_custom_alertbox
  Copyright (c) 2020 Rove. All rights reserved.
 */
 interface CustomAlertBoxButtonListener {
-    fun cancelButtonLeftClick()
-    fun okButtonRightClick()
-    fun okButtonCentreClick()
+    fun onLeftButtonClick()
+    fun onRightButtonClick()
+    fun onCentreButtonClick()
 }

@@ -89,12 +89,12 @@ class CustomAlertBox : RelativeLayout {
         if (singleButton) {
             okButtonCentre?.visibility = View.VISIBLE
             twoButtonLayout?.visibility = View.INVISIBLE
-            okButtonCentre?.setOnClickListener { customAlertBoxButtonListener?.okButtonCentreClick() }
+            okButtonCentre?.setOnClickListener { customAlertBoxButtonListener?.onCentreButtonClick() }
         } else {
             twoButtonLayout?.visibility = View.VISIBLE
             okButtonCentre?.visibility = View.INVISIBLE
-            cancelButtonLeft?.setOnClickListener { customAlertBoxButtonListener?.cancelButtonLeftClick() }
-            okButtonRight?.setOnClickListener { customAlertBoxButtonListener?.okButtonRightClick() }
+            cancelButtonLeft?.setOnClickListener { customAlertBoxButtonListener?.onLeftButtonClick() }
+            okButtonRight?.setOnClickListener { customAlertBoxButtonListener?.onRightButtonClick() }
         }
     }
 
