@@ -81,7 +81,7 @@ alertBox?.setDialogMessage(message, centreButtonTextString)
  alertBox?.setDialogMessage(message, leftButtonTextString,rightButtonTextString)
 ```
 
-**NOTE: By deafult centreButtonText is 'Ok', leftButtonText is 'No', and rightButtonText is 'Yes'. Only use the overloaded methods if you need to change the buttons' text. **
+**NOTE: By deafult centreButtonText is 'Ok', leftButtonText is 'No', and rightButtonText is 'Yes'. Only use the overloaded methods if you need to change the buttons' text.**
 
 ### Finally show/hide dialog by these methods:
 
@@ -133,15 +133,15 @@ class MainActivity : CustomAlertBoxButtonListener
 
 These all functions provide various custoizations:
 
-1. fun setImage(image: Drawable?, width: Float? = null, height: Float? = null,     useSdp:Boolean=false,scaleImageX:Float?=null,scaleImageY:Float?=null)
+1. fun setImage(image: Drawable?, width: Float? = null, height: Float? = null, useSdp:Boolean=false, scaleImageX:Float?=null, scaleImageY:Float?=null)
 
-2. fun configureAlertMessage(font: Typeface? = null, size: Float?=null, color: Int?=null,useSsp:Boolean=false)
+2. fun configureAlertMessage(font: Typeface? = null, size: Float?=null, color: Int?=null, useSsp:Boolean=false)
 
-3. fun configureLeftButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null, buttonHeight:Float?=null,background: Drawable?=null, defaultButtonText:String?=null,useSsp:Boolean=false)
+3. fun configureLeftButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null, buttonHeight:Float?=null, background: Drawable?=null, defaultButtonText:String?=null, useSsp:Boolean=false)
 
-4. fun configureCentreButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null, buttonHeight:Float?=null,background: Drawable?=null, defaultButtonText:String?=null,useSsp:Boolean=false)
+4. fun configureCentreButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null, buttonHeight:Float?=null, background: Drawable?=null, defaultButtonText:String?=null, useSsp:Boolean=false)
 
-5. fun configureRightButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null,buttonHeight:Float?=null, background: Drawable?=null, defaultButtonText:String?=null,useSsp:Boolean=false)
+5. fun configureRightButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null,buttonHeight:Float?=null, background: Drawable?=null, defaultButtonText:String?=null, useSsp:Boolean=false)
 
 6. fun setAlertBoxCornerRadius(radius:Float){
         alertBoxCardView.radius=radius
