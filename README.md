@@ -90,9 +90,10 @@ alertBox?.setDialogMessage(message, centreButtonTextString)
   alertBox?.hideDialog()
 ```
 
-### To listen for buttonClickEvents implement the CustomAlertBoxListener in your main class/use anonymous class
+### To listen for buttonClickEvents implement the CustomAlertBoxListener in your main activity class / use anonymous class
 
 ```
+//Use this
    alertBox?.customAlertBoxButtonListener = object : CustomAlertBoxButtonListener {
             override fun onCentreButtonClick() {
                
@@ -106,8 +107,61 @@ alertBox?.setDialogMessage(message, centreButtonTextString)
 
             }
         }
+        
+// Or use this
+
+class MainActivity : CustomAlertBoxButtonListener
+
+ alertBox.customAlertBoxButtonListener=this
+
+
+    override fun onCentreButtonClick() {
+       
+    }
+
+    override fun onLeftButtonClick() {
+        
+    }
+
+    override fun onRightButtonClick() {
+      
+    }
+    
 ```
 
+### Customization
+
+These all functions provide various custoizations:
+
+1. fun setImage(image: Drawable?, width: Float? = null, height: Float? = null,     useSdp:Boolean=false,scaleImageX:Float?=null,scaleImageY:Float?=null)
+
+2. fun configureAlertMessage(font: Typeface? = null, size: Float?=null, color: Int?=null,useSsp:Boolean=false)
+
+3. fun configureLeftButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null, buttonHeight:Float?=null,background: Drawable?=null, defaultButtonText:String?=null,useSsp:Boolean=false)
+
+4. fun configureCentreButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null, buttonHeight:Float?=null,background: Drawable?=null, defaultButtonText:String?=null,useSsp:Boolean=false)
+
+5. fun configureRightButton(font: Typeface? = null, textSize: Float?=null, textColor: Int?=null,buttonHeight:Float?=null, background: Drawable?=null, defaultButtonText:String?=null,useSsp:Boolean=false)
+
+6. fun setAlertBoxCornerRadius(radius:Float){
+        alertBoxCardView.radius=radius
+    }
+
+As you can see, every argument is optional, so you can only the use the ones which are needed as per your desire.
+
+**Note1: The argument background means the Background for the button. By deafult, a drawable is used with radius of 15dp and background color is ColorAccent.**
+
+**Note2: I recommened using the sdp/ssp libraries as they provide scalable sizes for different screen sized phones/tablets. However its your choice to either pass the size directly in dp(for ImageView/buttonHeight)/sp(for TextViews) or you can set useSdp/useSsp to true and pass then pass the sizes in sdp/ssp respectively.**
+
+**Note3: If you are using the same alertbox throughout the app, then customization is definitely a redundant task, therefore I would highly recommened the usage of BaseClass to set up your alertbox just once and then extend that BaseClass in all of your activities.
+Please refer to Example where I have followed the same design pattern**
+
+**Note4(IMP): As mentioned above, please refer to Example folder where you can find complete example of all the customization code and the base class design pattern. The same code is used to diplay the Gif above. It will most probably clear all the doubts remaining**
 
 
+## Credits
+https://github.com/intuit/sdp
+https://github.com/intuit/ssp
+
+These libraries are  used in my library code for certain sizes and margins as these provide very good scabale dp/sp, which works on varierty of differnet phone/tablet sizes.
 
