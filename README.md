@@ -40,7 +40,7 @@ AlertBox supports two types of layouts:
 ```
 As of now xml doesn't support any customization, but I will add them soon. 
 
-**NOTE: Make sure to use match parent because the view also uses a background overlay when displaying the alert box, so it needs full layout size for calculating the size of overlay and alertbox.**
+**Note: Make sure to use match parent because the view also uses a background overlay when displaying the alert box, so it needs full layout size for calculating the size of overlay and alertbox.**
 
 
 ## Initialization (Kotlin)
@@ -55,7 +55,7 @@ As of now xml doesn't support any customization, but I will add them soon.
         
 ```      
 
-**NOTE: Make sure to use match parent because the view also uses a background overlay when displaying the alert box, so it needs full layout size for calculating the size of overlay and alertbox.**
+**Note: Make sure to use match parent because the view also uses a background overlay when displaying the alert box, so it needs full layout size for calculating the size of overlay and alertbox.**
 
 
 ## Default usage
@@ -154,14 +154,16 @@ As you can see, every argument is optional, so you can only the use the ones whi
 **Note2: I recommened using the sdp/ssp libraries as they provide scalable sizes for different screen sized phones/tablets. However its your choice to either pass the size directly in dp(for ImageView/buttonHeight)/sp(for TextViews) or you can set useSdp/useSsp to true and pass then pass the sizes in sdp/ssp respectively.**
 
 **Note3: If you are using the same alertbox throughout the app, then customization is definitely a redundant task, therefore I would highly recommened the usage of BaseClass to set up your alertbox just once and then extend that BaseClass in all of your activities.
-Please refer to Example where I have followed the same design pattern**
+Please refer to Example where I have followed the same design pattern.**
 
-**Note4(IMP): As mentioned above, please refer to Example folder where you can find complete example of all the customization code and the base class design pattern. The same code is used to diplay the Gif above. It will most probably clear all the doubts remaining**
+**Note4(IMP): As mentioned above, please refer to Example folder where you can find complete example of all the customization code and the base class design pattern. The same code is used to diplay the Gif above. It will most probably clear all the doubts remaining.**
 
 
 ## Credits
-https://github.com/intuit/sdp
-https://github.com/intuit/ssp
+1. https://github.com/intuit/sdp
+2. https://github.com/intuit/ssp
 
-These libraries are  used in my library code for certain sizes and margins as these provide very good scabale dp/sp, which works on varierty of differnet phone/tablet sizes.
+These libraries are used in my library code for certain sizes and margins as these provide very good scabale dp/sp, which works on varierty of differnet phone/tablet sizes.
+
+Also, as mentioned above, you can either use standard dp/sp or pass in these sdp/ssp units to the customization functions.
 
