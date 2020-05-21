@@ -1,4 +1,3 @@
-
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -8,9 +7,9 @@ import com.rove.android_custom_alert.CustomAlertBox
 import com.rove.android_custom_alertbox.CustomAlertBoxButtonListener
 
 
-abstract class MyBaseClass : AppCompatActivity() {
+abstract class MyBaseClassTest : AppCompatActivity() {
     private var rootLatout: ConstraintLayout? = null
-    private var alertBox: CustomAlertBox? = null
+    var alertBox: CustomAlertBox? = null
     private lateinit var context: Activity
 
 
@@ -31,7 +30,7 @@ abstract class MyBaseClass : AppCompatActivity() {
         val typeface = ResourcesCompat.getFont(context, R.font.ubuntu)
         val typefaceBold = ResourcesCompat.getFont(context, R.font.ubuntu_medium)
         alertBox?.setImage(
-            ContextCompat.getDrawable(context, R.drawable.final_logo),     //Change this to image you want to insert
+            ContextCompat.getDrawable(context, R.drawable.final_logo),
             height = resources.getDimension(R.dimen._55sdp),
             useSdp = true,
             scaleImageX = 1.6f,
@@ -59,19 +58,25 @@ abstract class MyBaseClass : AppCompatActivity() {
         alertBox?.showDialog()
 
         alertBox?.customAlertBoxButtonListener = object : CustomAlertBoxButtonListener {
-            override fun cancelButtonLeftClick() {
-
-            }
-
-            override fun okButtonRightClick() {
-
-            }
-
-            override fun okButtonCentreClick() {
+            override fun onCentreButtonClick() {
                 alertBox?.hideDialog()
+            }
+
+            override fun onLeftButtonClick() {
+
+            }
+
+            override fun onRightButtonClick() {
+
             }
         }
     }
 
+    fun showCustomConfirmation(message: String, listener: CustomAlertBoxButtonListener) {
+        alertBox?.setDialogType(false)
+        alertBox?.setDialogMessage(message)
+        alertBox?.showDialog()
+        alertBox?.customAlertBoxButtonListener = listener
+    }
 
 }
