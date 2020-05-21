@@ -19,7 +19,7 @@ Then add this to your app's gradle dependencies
 
 ```
 dependencies {
-    implementation 'com.github.Talha-Siddiqui3:Android-Custom-AlertBox:1.0'
+    implementation 'com.github.Talha-Siddiqui3:Android-Custom-AlertBox:1.1'
 }
 ```
 
